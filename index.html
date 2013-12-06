@@ -1,0 +1,19 @@
+<html !DOCTYPE>
+
+<head></head>
+
+<body>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<h1>Start of page.</h1>
+	<script>
+	  var socket = io.connect('http://tc.milogert.com');
+	  socket.on('news', function (data) {
+	    console.log(data);
+	    socket.emit('my other event', { my: 'data' });
+	  });
+	</script>
+	<h1>End of page.</h1>
+</body>
+
+</html>
